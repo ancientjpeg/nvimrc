@@ -44,14 +44,20 @@ local plugin_setups = {
   'Shatur/neovim-tasks',
 
   -- colorscheme
+  -- {
+  --   'bluz71/vim-moonfly-colors',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.o.background = "dark"
+  --     vim.cmd("colorscheme moonfly")
+  --   end,
+  -- },
   {
-    'bluz71/vim-moonfly-colors',
+    "iagorrr/noctishc.nvim",
     lazy = false,
     priority = 1000,
-    config = function()
-      vim.o.background = "dark"
-      vim.cmd("colorscheme moonfly")
-    end,
+    config = function() vim.cmd("colorscheme noctishc") end
   },
   -- {
   --   'rebelot/kanagawa.nvim',
@@ -60,9 +66,9 @@ local plugin_setups = {
   --   config = function()
   --     require('kanagawa').setup({
   --       commentStyle = { italic = false },
-  --       theme = "dragon",
+  --       theme = "wave",
   --       background = {
-  --         dark = "dragon",
+  --         dark = "wave",
   --         light = "lotus"
   --       }
   --     })
@@ -76,7 +82,7 @@ local plugin_setups = {
 local lazy_config = {
   install = {
     colorscheme = {
-      'moonfly'
+      'noctishc'
     }
   }
 }
