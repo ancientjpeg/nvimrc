@@ -38,7 +38,10 @@ local plugin_setups = {
 
   -- git
   require('plugin.gitgutter'),
-  'sindrets/diffview.nvim',
+  {
+    'sindrets/diffview.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
 
   -- cmake + make
   'Shatur/neovim-tasks',
