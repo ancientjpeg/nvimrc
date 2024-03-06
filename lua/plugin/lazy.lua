@@ -14,25 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 
 -- plugin setups
 local plugin_setups = {
+  -- treesitter
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate'
   },
-
-  -- nvim-telescope and telescope algo
-  {
-    'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        build =
-        'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-      },
-    }
-  },
-
 
   -- lsp-zero installation
   { 'williamboman/mason.nvim' },
@@ -43,18 +29,21 @@ local plugin_setups = {
   { 'hrsh7th/nvim-cmp' },
   { 'L3MON4D3/LuaSnip' },
 
-  'Shatur/neovim-tasks',
-  {
-    'airblade/vim-gitgutter',
-    config = function()
-      vim.g.gitgutter_enabled = 1
-      vim.g.gitgutter_highlight_lines = 1
-      vim.g.gitgutter_highlight_linenrs = 1
-    end
-  },
+
+  -- debugging
   'mfussenegger/nvim-dap',
 
+  -- telescope
+  require('plugin.telescope'),
 
+  -- git
+  require('plugin.gitgutter'),
+  'sindrets/diffview.nvim',
+
+  -- cmake + make
+  'Shatur/neovim-tasks',
+
+  -- colorscheme
   {
     'bluz71/vim-moonfly-colors',
     lazy = false,
