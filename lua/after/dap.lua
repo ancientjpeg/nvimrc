@@ -36,6 +36,9 @@ dap.configurations.cpp = {
   },
 }
 
+local telescope = require('telescope')
+telescope.load_extension('dap')
+
 -- highlights + icons
 -- https://github.com/mfussenegger/nvim-dap/discussions/355#discussioncomment-2159022
 vim.api.nvim_set_hl(0, 'DapBreakpoint', { ctermbg = 0, fg = '#993939', bg = '#31353f' })
@@ -60,7 +63,7 @@ vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped', linehl =
 
 
 -- tenative
-vim.keymap.set('n', '<leader>df', function() require('dap').continue() end)
+vim.keymap.set('n', '<leader>da', function() require('dap').continue() end)
 vim.keymap.set('n', '<leader>dn', function() require('dap').step_over() end)
 vim.keymap.set('n', '<leader>di', function() require('dap').step_into() end)
 vim.keymap.set('n', '<leader>do', function() require('dap').step_out() end)
@@ -71,6 +74,7 @@ vim.keymap.set('n', '<F5>', function() require('dap').continue() end) -- keep th
 -- vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
 vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end)
 vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
+vim.keymap.set('n', '<Leader>db', function() telescope.extensions.dap.list_breakpoints() end)
 vim.keymap.set('n', '<Leader>dl',
   function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
 vim.keymap.set('n', '<Leader>dc', function() require('dap').repl.open() end)

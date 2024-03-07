@@ -31,10 +31,19 @@ local plugin_setups = {
 
 
   -- debugging
-  'mfussenegger/nvim-dap',
+  {
+    'mfussenegger/nvim-dap',
+    dependencies = { 'nvim-telescope/telescope-dap.nvim' }
+  },
 
   -- telescope
   require('plugin.telescope'),
+
+  -- bufferline
+  require('plugin.bufferline'),
+
+  -- tmux nav
+  require('plugin.vim-tmux-navigator'),
 
   -- git
   require('plugin.gitgutter'),
