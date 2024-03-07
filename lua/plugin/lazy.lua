@@ -39,6 +39,9 @@ local plugin_setups = {
   -- telescope
   require('plugin.telescope'),
 
+  -- nvim-tree
+  require('plugin.nvim-tree'),
+
   -- bufferline
   require('plugin.bufferline'),
 
