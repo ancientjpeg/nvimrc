@@ -68,6 +68,11 @@ vim.keymap.set('n', '<leader>dn', function() require('dap').step_over() end)
 vim.keymap.set('n', '<leader>di', function() require('dap').step_into() end)
 vim.keymap.set('n', '<leader>do', function() require('dap').step_out() end)
 
+vim.keymap.set('n', '<leader>dp', function()
+  require('dap').toggle_breakpoint()
+  require('dap').continue()
+end)
+
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end) -- keep this one even if the other F-keys are unused
 -- vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
 -- vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
