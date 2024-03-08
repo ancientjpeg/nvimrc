@@ -1,3 +1,6 @@
 return {
-  'cdelledonne/vim-cmake'
+  'cdelledonne/vim-cmake',
+  config = function()
+    vim.g.cmake_build_dir_location = 'build'
+  end
 }

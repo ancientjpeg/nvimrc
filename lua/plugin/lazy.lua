@@ -45,6 +45,9 @@ local plugin_setups = {
   -- bufferline
   require('plugin.bufferline'),
 
+  -- statusline
+  require('plugin.lualine'),
+
   -- tmux nav
   require('plugin.vim-tmux-navigator'),
 
@@ -56,7 +59,7 @@ local plugin_setups = {
   },
 
   --cmake
-  require('plugin.vim-cmake')
+  require('plugin.vim-cmake'),
 
   -- colorscheme
   -- {
@@ -68,12 +71,12 @@ local plugin_setups = {
   --     vim.cmd("colorscheme moonfly")
   --   end,
   -- },
-      {
-        "iagorrr/noctishc.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function() vim.cmd("colorscheme noctishc") end
-      },
+  {
+    "iagorrr/noctishc.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function() vim.cmd("colorscheme noctishc") end
+  },
   -- {
   --   'rebelot/kanagawa.nvim',
   --   lazy = false,
