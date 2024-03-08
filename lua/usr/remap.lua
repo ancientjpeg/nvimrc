@@ -22,25 +22,3 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- exit into netrw
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
-
--- window rebinds [ TENATIVE ]
-vim.keymap.set('n', '<leader>wq', '<C-w>q')
-vim.keymap.set('n', '<leader>wj', '<C-w>j')
-vim.keymap.set('n', '<leader>wk', '<C-w>k')
-vim.keymap.set('n', '<leader>wh', '<C-w>h')
-vim.keymap.set('n', '<leader>wl', '<C-w>l')
-
-
-
--- open a terminal below
-vim.keymap.set('n', '<leader>to', function() vim.cmd(':below sp | resize 14 | term') end)
--- trying to close all terminal windows
--- vim.keymap.set('n', '<leader>tc', function()
---   for k, v in pairs(vim.fn.getwininfo())
---   do
---     if (v.terminal)
---     then
---       print(k)
---     end
---   end
--- end)
