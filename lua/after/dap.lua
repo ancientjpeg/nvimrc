@@ -82,7 +82,7 @@ vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
 vim.keymap.set('n', '<Leader>db', function() telescope.extensions.dap.list_breakpoints() end)
 vim.keymap.set('n', '<Leader>dl',
   function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
-vim.keymap.set('n', '<Leader>dc', function() require('dap').repl.open() end)
+vim.keymap.set('n', '<Leader>dc', function() require('dap').repl.toggle() end)
 vim.keymap.set('n', '<Leader>dr', function() require('dap').run_last() end)
 vim.keymap.set('n', '<Leader>dq', function() require('dap').terminate() end)
 vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()

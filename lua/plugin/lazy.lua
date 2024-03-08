@@ -55,8 +55,8 @@ local plugin_setups = {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
-  -- cmake + make
-  'Shatur/neovim-tasks',
+  --cmake
+  require('plugin.vim-cmake')
 
   -- colorscheme
   -- {
@@ -68,12 +68,12 @@ local plugin_setups = {
   --     vim.cmd("colorscheme moonfly")
   --   end,
   -- },
-  {
-    "iagorrr/noctishc.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function() vim.cmd("colorscheme noctishc") end
-  },
+      {
+        "iagorrr/noctishc.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function() vim.cmd("colorscheme noctishc") end
+      },
   -- {
   --   'rebelot/kanagawa.nvim',
   --   lazy = false,
