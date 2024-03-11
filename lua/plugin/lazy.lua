@@ -29,6 +29,9 @@ local plugin_setups = {
   { 'hrsh7th/nvim-cmp' },
   { 'L3MON4D3/LuaSnip' },
 
+  -- incremental rename helper
+  require('plugin.inc-rename'),
+
 
   -- debugging
   {
@@ -50,6 +53,7 @@ local plugin_setups = {
 
   -- tmux nav
   require('plugin.vim-tmux-navigator'),
+
 
   -- git
   require('plugin.gitgutter'),
