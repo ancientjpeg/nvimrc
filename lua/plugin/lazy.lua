@@ -59,8 +59,11 @@ local plugin_setups = {
   require('plugin.gitgutter'),
   require('plugin.diffview'),
 
-  --cmake
+  -- cmake
   require('plugin.vim-cmake'),
+
+  -- markdown
+  require('plugin.markdown-preview'),
 
   -- colorscheme
   -- {

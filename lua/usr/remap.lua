@@ -11,6 +11,10 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- my own centered navs
+vim.keymap.set("n", "<leader>j", "jzz")
+vim.keymap.set("n", "<leader>k", "kzz")
+
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
