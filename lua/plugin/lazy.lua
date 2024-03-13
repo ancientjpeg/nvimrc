@@ -65,39 +65,9 @@ local plugin_setups = {
   -- markdown
   require('plugin.markdown-preview'),
 
-  -- colorscheme
-  -- {
-  --   'bluz71/vim-moonfly-colors',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.o.background = "dark"
-  --     vim.cmd("colorscheme moonfly")
-  --   end,
-  -- },
-  {
-    "iagorrr/noctishc.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function() vim.cmd("colorscheme noctishc") end
-  },
-  -- {
-  --   'rebelot/kanagawa.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require('kanagawa').setup({
-  --       commentStyle = { italic = false },
-  --       theme = "wave",
-  --       background = {
-  --         dark = "wave",
-  --         light = "lotus"
-  --       }
-  --     })
-  --     vim.o.background = "dark"
-  --     vim.cmd("colorscheme kanagawa")
-  --   end,
-  -- }
+  -- theme
+  require('plugin.theme')
+
 }
 
 
