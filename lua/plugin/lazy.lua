@@ -45,8 +45,8 @@ local plugin_setups = {
   -- nvim-tree
   require('plugin.nvim-tree'),
 
-  -- bufferline
-  require('plugin.bufferline'),
+  -- harpoon
+  require('plugin.harpoon'),
 
   -- statusline
   require('plugin.lualine'),
@@ -74,7 +74,7 @@ local plugin_setups = {
 local lazy_config = {
   install = {
     colorscheme = {
-      'noctishc'
+      'everforest'
     }
   }
 }
