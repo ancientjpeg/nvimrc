@@ -7,7 +7,6 @@ return {
     require("bufferline").setup({})
 
     vim.keymap.set('n', '<leader>gb', function() vim.cmd('BufferLinePick') end)
-    vim.keymap.set('n', '<leader>gd', function() vim.cmd('bd') end)
     vim.keymap.set('n', '<leader>gD', function() vim.cmd('BufferLinePickClose') end)
     vim.keymap.set('n', '<leader>go', function() vim.cmd('BufferLineCloseOthers') end)
     vim.keymap.set('n', '<leader>ga', function()
