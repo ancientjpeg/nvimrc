@@ -59,9 +59,15 @@ vim.fn.sign_define('DapBreakpointRejected',
 vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'DapLogPoint', linehl = 'DapLogPoint', numhl = 'DapLogPoint' })
 vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped', linehl = 'DapStopped', numhl = 'DapStopped' })
 
+-- quickly get out of hover windows
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'dap-float',
+  callback = function()
+    vim.keymap.set('n', 'q', '<cmd>close!<CR>', { buffer = true })
+  end
+})
+
 -- keymappings
-
-
 -- tenative
 vim.keymap.set('n', '<leader>da', function() require('dap').continue() end)
 vim.keymap.set('n', '<leader>dn', function() require('dap').step_over() end)
