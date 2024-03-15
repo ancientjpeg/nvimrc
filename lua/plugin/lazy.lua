@@ -54,13 +54,15 @@ local plugin_setups = {
   -- tmux nav
   require('plugin.vim-tmux-navigator'),
 
-
   -- git
   require('plugin.gitgutter'),
   require('plugin.diffview'),
 
   -- cmake
   require('plugin.vim-cmake'),
+
+  -- vim-commentary
+  require('plugin.vim-commentary'),
 
   -- markdown
   require('plugin.markdown-preview'),

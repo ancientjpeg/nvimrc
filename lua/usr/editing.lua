@@ -11,3 +11,6 @@ vim.o.wrap = false
 -- stop auto-comment on newlines https://www.reddit.com/r/neovim/comments/sqld76/stop_automatic_newline_continuation_of_comments/
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
+-- filetype indent on
+vim.cmd('filetype plugin indent on')
