@@ -8,13 +8,31 @@ dap.adapters.lldb = {
 
 dap.configurations.cpp = {
   {
-    name = 'Launch',
+    name = 'Launch LLDB',
     type = 'lldb',
     request = 'launch',
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
     cwd = '${workspaceFolder}',
+    stopOnEntry = false,
+    args = {},
+  },
+  {
+    name = 'Attach LLDB',
+    type = 'lldb',
+    request = 'attach',
+    cwd = '${workspaceFolder}',
+    pid = require('dap.utils').pick_process,
+    stopOnEntry = false,
+    args = {},
+  },
+  {
+    name = 'Attach LLDB by PID (broken?)',
+    type = 'lldb',
+    request = 'attach',
+    cwd = '${workspaceFolder}',
+    pid = function() return vim.fn.input("PID:") end,
     stopOnEntry = false,
     args = {},
   },
@@ -52,30 +70,30 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- keymappings
--- tenative
-vim.keymap.set('n', '<leader>da', function() require('dap').continue() end)
-vim.keymap.set('n', '<leader>dn', function() require('dap').step_over() end)
-vim.keymap.set('n', '<leader>di', function() require('dap').step_into() end)
-vim.keymap.set('n', '<leader>do', function() require('dap').step_out() end)
+-- https://www.reddit.com/r/neovim/comments/12wypuf/what_has_been_peoples_experience_with_nvimdap_or/
+vim.keymap.set('n', '<leader>d<space>', function() dap.continue() end)
+vim.keymap.set('n', '<leader>dj', function() dap.step_over() end)
+vim.keymap.set('n', '<leader>dl', function() dap.step_into() end)
+vim.keymap.set('n', '<leader>dh', function() dap.step_out() end)
 
-vim.keymap.set('n', '<leader>dp', function()
-  require('dap').toggle_breakpoint()
-  require('dap').continue()
+-- unset breakpoint and proceed
+vim.keymap.set('n', '<leader>dP', function()
+  dap.set_breakpoint()
+  dap.toggle_breakpoint()
+  dap.continue()
 end)
 
-vim.keymap.set('n', '<F5>', function() require('dap').continue() end) -- keep this one even if the other F-keys are unused
--- vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
--- vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
--- vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
-vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end)
-vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
+vim.keymap.set('n', '<leader>dx', function() dap.clear_breakpoints() end)
+
+vim.keymap.set('n', '<Leader>b', function() dap.toggle_breakpoint() end)
+vim.keymap.set('n', '<Leader>B', function() dap.set_breakpoint() end)
 vim.keymap.set('n', '<Leader>db', function() telescope.extensions.dap.list_breakpoints() end)
-vim.keymap.set('n', '<Leader>dl',
-  function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
-vim.keymap.set('n', '<Leader>dc', function() require('dap').repl.toggle() end)
-vim.keymap.set('n', '<Leader>dr', function() require('dap').run_last() end)
-vim.keymap.set('n', '<Leader>dq', function() require('dap').terminate() end)
-vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()
+vim.keymap.set('n', '<Leader>dL',
+  function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+vim.keymap.set('n', '<Leader>dc', function() dap.repl.toggle() end)
+vim.keymap.set('n', '<Leader>dr', function() dap.run_last() end)
+vim.keymap.set('n', '<Leader>dq', function() dap.terminate() end)
+vim.keymap.set({ 'n', 'v' }, '<Leader>dH', function()
   require('dap.ui.widgets').hover()
 end)
 vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function()
