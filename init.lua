@@ -15,7 +15,6 @@ local function local_config()
 
   for path in vim.fs.dir(cwd) do
     if path == '.nvim.env' then
-      vim.print(path)
       local env_dir = cwd .. '/' .. path
       env_dir = vim.fs.normalize(env_dir)
       package.path = package.path .. ';' .. cwd .. '/.nvim.env/?.lua'
