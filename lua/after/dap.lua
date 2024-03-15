@@ -18,22 +18,6 @@ dap.configurations.cpp = {
     stopOnEntry = false,
     args = {},
   },
-  {
-    name = 'Launch Standalone',
-    type = 'lldb',
-    request = 'launch',
-    program = function()
-      local plugin_name = vim.fn.input('Plugin name: ', 'Current')
-      local plugin_snake = string.lower(string.gsub(plugin_name, ' ', '_'))
-      local config = vim.fn.input('Config: ', 'Debug')
-      local path = '/build/plugins/' ..
-          plugin_snake .. '/' .. plugin_snake .. '_artefacts/' .. config .. '/Standalone/' .. plugin_name .. '.app'
-      return vim.fn.getcwd() .. path
-    end,
-    cwd = '${workspaceFolder}',
-    stopOnEntry = false,
-    args = {},
-  },
 }
 
 local telescope = require('telescope')
