@@ -51,9 +51,10 @@ vim.keymap.set('n', 'ø', vim.cmd.ClangdSwitchSourceHeader)
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
-    'lua_ls',
     'eslint',
-    'pyright'
+    'lua_ls',
+    'pyright',
+    'rust_analyzer',
   },
   handlers = {
     lsp_zero.default_setup,
