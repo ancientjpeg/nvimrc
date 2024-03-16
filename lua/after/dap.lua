@@ -38,6 +38,9 @@ dap.configurations.cpp = {
   },
 }
 
+-- python
+require('dap-python').setup()
+
 local telescope = require('telescope')
 telescope.load_extension('dap')
 
