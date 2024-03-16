@@ -68,6 +68,9 @@ local plugin_setups = {
   -- vim-commentary
   require('plugin.vim-commentary'),
 
+  -- blankline
+  require('plugin.indent-blankline'),
+
   -- markdown
   require('plugin.markdown-preview'),
 
