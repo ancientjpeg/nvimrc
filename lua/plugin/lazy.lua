@@ -58,7 +58,8 @@ local plugin_setups = {
   require('plugin.vim-tmux-navigator'),
 
   -- git
-  require('plugin.gitgutter'),
+  require('plugin.gitsigns'),
+  require('plugin.vim-fugitive'),
   require('plugin.diffview'),
 
   -- cmake
