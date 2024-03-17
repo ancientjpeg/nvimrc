@@ -84,6 +84,14 @@ require('mason-lspconfig').setup({
   }
 })
 
+-- PYRIGHT CONF - FORMAT WITH BLACK !
+local group = vim.api.nvim_create_augroup("Black", { clear = true })
+vim.api.nvim_create_autocmd("bufWritePost", {
+  pattern = "*.py",
+  command = "silent !black %",
+  group = group,
+})
+
 local cmp = require('cmp')
 
 cmp.setup({
