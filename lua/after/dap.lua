@@ -23,16 +23,21 @@ dap.configurations.cpp = {
     type = 'lldb',
     request = 'attach',
     cwd = '${workspaceFolder}',
-    pid = require('dap.utils').pick_process,
+    pid = function()
+      return require('dap.utils').pick_process()
+    end,
     stopOnEntry = false,
     args = {},
   },
   {
-    name = 'Attach LLDB by PID (broken?)',
+    name = 'Attach LLDB by PID',
     type = 'lldb',
     request = 'attach',
     cwd = '${workspaceFolder}',
-    pid = function() return vim.fn.input("PID:") end,
+    pid = function()
+      local id = vim.fn.input("PID: ", "32757")
+      return tonumber(id)
+    end,
     stopOnEntry = false,
     args = {},
   },
