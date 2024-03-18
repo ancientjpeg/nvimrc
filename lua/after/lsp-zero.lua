@@ -45,6 +45,7 @@ lspconfig.clangd.setup({
 
 -- clangd-specific binding
 vim.keymap.set('n', 'ø', vim.cmd.ClangdSwitchSourceHeader)
+vim.keymap.set('n', '<M-o>', vim.cmd.ClangdSwitchSourceHeader)
 
 
 -- install other LSPs via mason
