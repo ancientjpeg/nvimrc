@@ -80,6 +80,7 @@ vim.api.nvim_create_autocmd('FileType', {
 -- keymappings
 -- https://www.reddit.com/r/neovim/comments/12wypuf/what_has_been_peoples_experience_with_nvimdap_or/
 vim.keymap.set('n', '<leader>d<space>', function() dap.continue() end)
+vim.keymap.set('n', '<F5>', function() dap.continue() end)
 vim.keymap.set('n', '<leader>dj', function() dap.step_over() end)
 vim.keymap.set('n', '<leader>dl', function() dap.step_into() end)
 vim.keymap.set('n', '<leader>dh', function() dap.step_out() end)
