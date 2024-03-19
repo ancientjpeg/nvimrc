@@ -8,3 +8,20 @@ vim.g.loaded_netrwPlugin = 1
 require("usr")
 require("plugin")
 require("after")
+
+-- run additional config if present
+local function local_config()
+  local cwd = vim.fn.getcwd()
+
+  for path in vim.fs.dir(cwd) do
+    if path == '.nvim.env' then
+      local env_dir = cwd .. '/' .. path
+      env_dir = vim.fs.normalize(env_dir)
+      package.path = package.path .. ';' .. cwd .. '/.nvim.env/?.lua'
+      require('localenv')
+      return
+    end
+  end
+end
+
+local_config()

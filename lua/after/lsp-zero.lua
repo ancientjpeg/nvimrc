@@ -45,14 +45,17 @@ lspconfig.clangd.setup({
 
 -- clangd-specific binding
 vim.keymap.set('n', 'ø', vim.cmd.ClangdSwitchSourceHeader)
+vim.keymap.set('n', '<M-o>', vim.cmd.ClangdSwitchSourceHeader)
 
 
 -- install other LSPs via mason
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
+    'eslint',
     'lua_ls',
-    'eslint'
+    'pyright',
+    'rust_analyzer',
   },
   handlers = {
     lsp_zero.default_setup,
@@ -80,6 +83,14 @@ require('mason-lspconfig').setup({
       )
     end
   }
+})
+
+-- PYRIGHT CONF - FORMAT WITH BLACK !
+local group = vim.api.nvim_create_augroup("Black", { clear = true })
+vim.api.nvim_create_autocmd("bufWritePost", {
+  pattern = "*.py",
+  command = "silent !black %",
+  group = group,
 })
 
 local cmp = require('cmp')

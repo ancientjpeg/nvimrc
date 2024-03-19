@@ -8,7 +8,18 @@ return {
     vim.opt.termguicolors = true
 
     vim.keymap.set('n', '<leader>nt', vim.cmd.NvimTreeToggle);
-    -- empty setup using defaults
-    require("nvim-tree").setup()
+
+    require("nvim-tree").setup({
+      filters = {
+      },
+      view = {
+        signcolumn = "auto",
+        number = true,
+        relativenumber = true,
+        -- float = {
+        --   enable = true,
+        -- },
+      },
+    })
   end
 }

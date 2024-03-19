@@ -36,7 +36,10 @@ local plugin_setups = {
   -- debugging
   {
     'mfussenegger/nvim-dap',
-    dependencies = { 'nvim-telescope/telescope-dap.nvim' }
+    dependencies = {
+      'nvim-telescope/telescope-dap.nvim',
+      'mfussenegger/nvim-dap-python'
+    }
   },
 
   -- telescope
@@ -45,8 +48,8 @@ local plugin_setups = {
   -- nvim-tree
   require('plugin.nvim-tree'),
 
-  -- bufferline
-  require('plugin.bufferline'),
+  -- harpoon
+  require('plugin.harpoon'),
 
   -- statusline
   require('plugin.lualine'),
@@ -54,57 +57,33 @@ local plugin_setups = {
   -- tmux nav
   require('plugin.vim-tmux-navigator'),
 
-
   -- git
-  require('plugin.gitgutter'),
+  require('plugin.gitsigns'),
+  require('plugin.vim-fugitive'),
   require('plugin.diffview'),
 
   -- cmake
   require('plugin.vim-cmake'),
 
+  -- vim-commentary
+  require('plugin.vim-commentary'),
+
+  -- blankline
+  require('plugin.indent-blankline'),
+
   -- markdown
   require('plugin.markdown-preview'),
 
-  -- colorscheme
-  -- {
-  --   'bluz71/vim-moonfly-colors',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.o.background = "dark"
-  --     vim.cmd("colorscheme moonfly")
-  --   end,
-  -- },
-  {
-    "iagorrr/noctishc.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function() vim.cmd("colorscheme noctishc") end
-  },
-  -- {
-  --   'rebelot/kanagawa.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require('kanagawa').setup({
-  --       commentStyle = { italic = false },
-  --       theme = "wave",
-  --       background = {
-  --         dark = "wave",
-  --         light = "lotus"
-  --       }
-  --     })
-  --     vim.o.background = "dark"
-  --     vim.cmd("colorscheme kanagawa")
-  --   end,
-  -- }
+  -- theme
+  require('plugin.theme')
+
 }
 
 
 local lazy_config = {
   install = {
     colorscheme = {
-      'noctishc'
+      'everforest'
     }
   }
 }
