@@ -68,6 +68,9 @@ local plugin_setups = {
   -- vim-commentary
   require('plugin.vim-commentary'),
 
+  -- doge (doxygen)
+  require('plugin.doge'),
+
   -- blankline
   require('plugin.indent-blankline'),
 
