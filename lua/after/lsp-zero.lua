@@ -39,7 +39,7 @@ lspconfig.clangd.setup({
     compilationDatabasePath = "build",
   },
   cmd = {
-    vim.fn.has('win32') and 'clangd' or '/opt/homebrew/opt/llvm/bin/clangd'
+    vim.fn.has('win32') ~= 0 and 'clangd' or '/opt/homebrew/opt/llvm/bin/clangd'
   },
 })
 
