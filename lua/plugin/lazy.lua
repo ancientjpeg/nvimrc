@@ -21,21 +21,15 @@ local plugin_setups = {
   },
 
   -- lsp-zero installation
-  { 'williamboman/mason.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
-  { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
-  { 'neovim/nvim-lspconfig' },
-  { 'hrsh7th/cmp-nvim-lsp' },
-  { 'hrsh7th/nvim-cmp' },
-  { 'L3MON4D3/LuaSnip' },
+  require('plugin.lsp.lsp-zero'),
 
   -- incremental rename helper
   require('plugin.inc-rename'),
 
 
   -- debugging
-  require('plugin.debug.dap'),
-  require('plugin.debug.dap-ui'),
+  require('plugin.debug.nvim-dap'),
+  require('plugin.debug.nvim-dap-ui'),
 
   -- telescope
   require('plugin.telescope'),
