@@ -12,59 +12,59 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- plugin setups
-local plugin_setups = {
-  -- treesitter
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate'
-  },
+-- plugin specs
+local plugin_specs = {
 
-  -- lsp-zero installation
+  -- [[ lsp ]]
+  -- lsp-zero
   require('plugin.lsp.lsp-zero'),
 
+  -- treesitter
+  require('plugin.lsp.treesitter'),
+
   -- incremental rename helper
-  require('plugin.inc-rename'),
+  require('plugin.lsp.inc-rename'),
 
 
-  -- debugging
+  -- [[ debug ]]
   require('plugin.debug.nvim-dap'),
   require('plugin.debug.nvim-dap-ui'),
 
+  -- [[ nav ]]
   -- telescope
-  require('plugin.telescope'),
+  require('plugin.nav.telescope'),
 
   -- nvim-tree
-  require('plugin.nvim-tree'),
+  require('plugin.nav.nvim-tree'),
 
   -- harpoon
-  require('plugin.harpoon'),
+  require('plugin.nav.harpoon'),
 
-  -- statusline
-  require('plugin.lualine'),
 
   -- tmux nav
-  require('plugin.vim-tmux-navigator'),
+  require('plugin.nav.vim-tmux-navigator'),
 
-  -- git
-  require('plugin.gitsigns'),
-  require('plugin.vim-fugitive'),
-  require('plugin.diffview'),
+  -- [[ git ]]
+  require('plugin.git.gitsigns'),
+  require('plugin.git.vim-fugitive'),
+  require('plugin.git.diffview'),
 
-  -- cmake
-  require('plugin.vim-cmake'),
-
-  -- vim-commentary
-  require('plugin.vim-commentary'),
-
-  -- blankline
-  require('plugin.indent-blankline'),
-
-  -- markdown
-  require('plugin.markdown-preview'),
+  -- [[ editor ]]
+  -- statusline
+  require('plugin.editor.lualine'),
 
   -- theme
-  require('plugin.theme')
+  require('plugin.editor.theme'),
+
+  -- vim-commentary
+  require('plugin.editor.vim-commentary'),
+
+  -- blankline
+  require('plugin.editor.indent-blankline'),
+
+  -- [[ misc ]]
+  -- markdown
+  require('plugin.misc.markdown-preview'),
 
 }
 
@@ -78,6 +78,6 @@ local lazy_config = {
 }
 
 require('lazy').setup(
-  plugin_setups,
+  plugin_specs,
   lazy_config
 )

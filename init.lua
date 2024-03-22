@@ -4,7 +4,7 @@ vim.g.loaded_netrwPlugin = 1
 
 -- source all usr config first
 require("usr")
-require("plugin")
+require(".plugin.lazy")
 
 -- run additional config if present
 local function local_config()
