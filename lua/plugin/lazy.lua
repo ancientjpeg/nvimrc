@@ -34,13 +34,8 @@ local plugin_setups = {
 
 
   -- debugging
-  {
-    'mfussenegger/nvim-dap',
-    dependencies = {
-      'nvim-telescope/telescope-dap.nvim',
-      'mfussenegger/nvim-dap-python'
-    }
-  },
+  require('plugin.debug.dap'),
+  require('plugin.debug.dap-ui'),
 
   -- telescope
   require('plugin.telescope'),
