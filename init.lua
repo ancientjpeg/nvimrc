@@ -3,8 +3,8 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- source all usr config first
-require("usr")
-require(".plugin.lazy")
+require("core")
+require("plugin")
 
 -- run additional config if present
 local function local_config()
