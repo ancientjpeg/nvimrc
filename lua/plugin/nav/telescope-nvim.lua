@@ -30,10 +30,10 @@ return {
       },
       extensions = {
         fzf = {
-          fuzzy = true,                   -- false will only do exact matching
-          override_generic_sorter = true, -- override the generic sorter
-          override_file_sorter = true,    -- override the file sorter
-          case_mode = "ignore_case",      -- or "ignore_case" or "respect_case"
+          fuzzy                   = true,          -- false will only do exact matching
+          override_generic_sorter = true,          -- override the generic sorter
+          override_file_sorter    = true,          -- override the file sorter
+          case_mode               = "ignore_case", -- or "ignore_case" or "respect_case"
         }
       }
     })
@@ -41,7 +41,13 @@ return {
 
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-    vim.keymap.set('n', '<leader>fF', function() builtin.find_files({ no_ignore = true }) end)
+    vim.keymap.set('n', '<leader>fF', function()
+      builtin.find_files({
+        no_ignore        = true,
+        no_ignore_parent = true,
+        hidden           = true,
+      })
+    end)
     vim.keymap.set('n', '<leader>fg', telescope.extensions.live_grep_args.live_grep_args)
     vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
