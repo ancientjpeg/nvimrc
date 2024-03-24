@@ -43,6 +43,14 @@ return {
     vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
     vim.keymap.set('n', '<leader>fF', function()
       builtin.find_files({
+        find_command     = { -- solely to exclude .git from searches
+          'rg',
+          '--files',
+          '--hidden',
+          '--no-ignore',
+          '--glob',
+          '!.git',
+        },
         no_ignore        = true,
         no_ignore_parent = true,
         hidden           = true,
