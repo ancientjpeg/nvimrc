@@ -45,6 +45,7 @@ return {
     vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
     vim.keymap.set('n', '<leader>fr', builtin.resume, {})
+    vim.keymap.set('n', '<leader>fk', builtin.keymaps, {})
     vim.keymap.set('n', '<leader>fcc', builtin.git_commits, {})
     vim.keymap.set('n', '<leader>fcb', builtin.git_bcommits, {})
     vim.keymap.set('n', '<C-p>', builtin.git_files, {})

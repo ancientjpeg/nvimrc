@@ -32,7 +32,7 @@ local plugin_specs = {
 
   -- [[ nav ]]
   -- telescope
-  require('plugin.nav.telescope'),
+  require('plugin.nav.telescope-nvim'),
 
   -- nvim-tree
   require('plugin.nav.nvim-tree'),
