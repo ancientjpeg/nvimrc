@@ -53,6 +53,16 @@ return {
     -- python
     require('dap-python').setup()
 
+    dap.configurations.python = {
+      {
+        type    = "python",
+        request = "launch",
+        name    = "Debug Tests",
+        module  = "pytest",
+        args    = { "." },
+      }
+    }
+
     -- telescope
     local telescope = require('telescope')
     telescope.load_extension('dap')
