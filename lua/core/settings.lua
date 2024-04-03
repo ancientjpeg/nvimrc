@@ -23,3 +23,6 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 -- filetype indent on
 vim.cmd('filetype plugin indent on')
+
+-- i have never once found a swapfile to be helpful.
+vim.o.swapfile = false

@@ -8,9 +8,12 @@ return {
     local dap = require('dap')
 
     dap.adapters.lldb = {
-      type = 'executable',
+      type    = 'executable',
       command = '/opt/homebrew/opt/llvm/bin/lldb-vscode',
-      name = 'lldb'
+      name    = 'lldb',
+      options = {
+        initialize_timeout_sec = 10
+      },
     }
 
     dap.configurations.cpp = {
