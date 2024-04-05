@@ -12,9 +12,17 @@ vim.o.wrap = false
 vim.o.hlsearch = false
 vim.o.incsearch = true
 
+vim.scrolloff = 5
+
+vim.opt.updatetime = 50
+vim.opt.colorcolumn = "80"
+
 -- stop auto-comment on newlines https://www.reddit.com/r/neovim/comments/sqld76/stop_automatic_newline_continuation_of_comments/
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 -- filetype indent on
 vim.cmd('filetype plugin indent on')
+
+-- i have never once found a swapfile to be helpful.
+vim.o.swapfile = false

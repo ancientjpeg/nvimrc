@@ -24,5 +24,6 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
--- exit into netrw
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+-- pane split keymaps
+vim.keymap.set("n", "<leader>s", function() vim.cmd('split') end)
+vim.keymap.set("n", "<leader>v", function() vim.cmd('vsplit') end)
