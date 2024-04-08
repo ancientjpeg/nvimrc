@@ -9,7 +9,7 @@ return {
 
     dap.adapters.lldb = {
       type    = 'executable',
-      command = vim.fn.has('win32') and 'lldb-vscode' or '/opt/homebrew/opt/llvm/bin/lldb-vscode',
+      command = vim.fn.has('win32') ~= 0 and 'lldb-vscode' or '/opt/homebrew/opt/llvm/bin/lldb-vscode',
       name    = 'lldb',
       options = {
         initialize_timeout_sec = 10
