@@ -25,6 +25,9 @@ local plugin_specs = {
   -- incremental rename helper
   require('plugin.lsp.inc-rename'),
 
+  -- neogen
+  require('plugin.lsp.neogen'),
+
 
   -- [[ debug ]]
   require('plugin.debug.nvim-dap'),
