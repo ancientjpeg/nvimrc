@@ -23,3 +23,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 -- pane split keymaps
 vim.keymap.set("n", "<leader>s", function() vim.cmd('split') end)
 vim.keymap.set("n", "<leader>v", function() vim.cmd('vsplit') end)
+
+-- quickfix quickbinds
+vim.keymap.set("n", "<leader>qq", "<cmd>cclose<CR>");
+vim.keymap.set("n", "<leader>qo", "<cmd>copen<CR>");
