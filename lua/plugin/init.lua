@@ -62,6 +62,9 @@ local plugin_specs = {
   -- vim-commentary
   require('plugin.editor.vim-commentary'),
 
+  -- context
+  require('plugin.editor.nvim-treesitter-context'),
+
   -- blankline
   require('plugin.editor.indent-blankline'),
 
