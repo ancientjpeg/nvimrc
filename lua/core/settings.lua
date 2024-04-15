@@ -12,10 +12,14 @@ vim.o.wrap = false
 vim.o.hlsearch = false
 vim.o.incsearch = true
 
+-- smartcase search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
 vim.scrolloff = 5
 
-vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"
+vim.o.updatetime = 50
+vim.o.colorcolumn = "80"
 
 -- stop auto-comment on newlines https://www.reddit.com/r/neovim/comments/sqld76/stop_automatic_newline_continuation_of_comments/
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
