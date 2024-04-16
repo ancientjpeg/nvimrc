@@ -1,10 +1,15 @@
 return {
   'stevearc/oil.nvim',
-  opts         = {},
+  opts         = {
+    keymaps = {
+      ["<leader>H"] = "actions.parent",
+      ["<leader>L"] = "actions.select",
+    }
+  },
   dependencies = { "nvim-tree/nvim-web-devicons" },
   keys         = {
-    { "-", "<cmd>Oil <cr>",        desc = "Oil - Open Parent Dir" },
-    { "_", "<cmd>Oil --float<cr>", desc = "Oil - Open Parent Dir (Floating Window)" },
+    { "-", "<cmd>Oil <cr>",                   desc = "Oil - Open Parent Dir" },
+    { "_", "<cmd>execute 'Oil' getcwd()<cr>", desc = "Oil - Open Current Working Dir" },
   }
 
 }

@@ -26,7 +26,10 @@ return {
 
     telescope.setup({
       defaults = {
-        path_display = { "truncate" }
+        path_display = { "truncate" },
+        cache_picker = {
+          num_pickers = 6,
+        }
       },
       extensions = {
         fzf = {
@@ -60,6 +63,7 @@ return {
     vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
     vim.keymap.set('n', '<leader>fr', builtin.resume, {})
+    vim.keymap.set('n', '<leader>fp', builtin.pickers, {})
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, {})
     vim.keymap.set('n', '<leader>fcc', builtin.git_commits, {})
     vim.keymap.set('n', '<leader>fcb', builtin.git_bcommits, {})
