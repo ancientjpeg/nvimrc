@@ -37,8 +37,8 @@ local plugin_specs = {
   -- telescope
   require('plugin.nav.telescope-nvim'),
 
-  -- nvim-tree
-  require('plugin.nav.nvim-tree'),
+  -- oil
+  require('plugin.nav.oil-nvim'),
 
   -- harpoon
   require('plugin.nav.harpoon'),
