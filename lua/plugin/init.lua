@@ -71,6 +71,8 @@ local plugin_specs = {
   -- [[ misc ]]
   -- markdown
   require('plugin.misc.markdown-preview'),
+  -- toggleterm
+  require('plugin.misc.toggleterm-nvim'),
 
 }
 
