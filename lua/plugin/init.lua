@@ -56,9 +56,6 @@ local plugin_specs = {
   -- statusline
   require('plugin.editor.lualine'),
 
-  -- theme
-  require('plugin.editor.theme'),
-
   -- vim-commentary
   require('plugin.editor.vim-commentary'),
 
@@ -67,6 +64,9 @@ local plugin_specs = {
 
   -- blankline
   require('plugin.editor.indent-blankline'),
+
+  -- [[ themes ]]
+  require('plugin.themes.evergreen-nvim'),
 
   -- [[ misc ]]
   -- markdown
