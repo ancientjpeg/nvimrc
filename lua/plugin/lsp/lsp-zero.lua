@@ -52,7 +52,11 @@ return {
       },
       cmd = {
         vim.fn.has('win32') ~= 0 and 'clangd' or
-        '/opt/homebrew/opt/llvm/bin/clangd', '--function-arg-placeholders=0', '--clang-tidy', '--background-index'
+        '/opt/homebrew/opt/llvm/bin/clangd',
+        '--function-arg-placeholders=0',
+        '--clang-tidy',
+        '--background-index',
+        '--header-insertion=never',
       },
     })
     -- clangd-specific binding
