@@ -117,7 +117,11 @@ return {
     vim.keymap.set('n', '<leader>dx', function() dap.clear_breakpoints() end)
 
     vim.keymap.set('n', '<leader>b', function() dap.toggle_breakpoint() end)
-    vim.keymap.set('n', '<leader>B', function() dap.set_breakpoint() end)
+    vim.keymap.set('n', '<leader>B', function()
+      dap.set_breakpoint(
+        vim.fn.input('Condition: ')
+      )
+    end)
     vim.keymap.set('n', '<leader>db', function() telescope.extensions.dap.list_breakpoints() end)
     vim.keymap.set('n', '<leader>dL',
       function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
