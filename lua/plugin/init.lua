@@ -73,6 +73,8 @@ local plugin_specs = {
   require('plugin.misc.markdown-preview'),
   -- toggleterm
   require('plugin.misc.toggleterm-nvim'),
+  -- alpha
+  require('plugin.misc.alpha-nvim'),
 
 }
 
