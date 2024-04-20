@@ -65,6 +65,9 @@ local plugin_specs = {
   -- blankline
   require('plugin.editor.indent-blankline'),
 
+  --noice
+  require('plugin.editor.noice-nvim'),
+
   -- [[ themes ]]
   require('plugin.themes.evergreen-nvim'),
 
