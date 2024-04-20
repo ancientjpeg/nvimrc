@@ -68,6 +68,9 @@ local plugin_specs = {
   --noice
   require('plugin.editor.noice-nvim'),
 
+  --trouble
+  require('plugin.editor.trouble-nvim'),
+
   -- [[ themes ]]
   require('plugin.themes.evergreen-nvim'),
 
