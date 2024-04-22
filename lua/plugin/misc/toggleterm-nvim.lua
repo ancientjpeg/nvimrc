@@ -5,7 +5,7 @@ return {
     opts = {
       open_mapping    = [[<C-s>]],
       direction       = 'float',
-      insert_mappings = false,
+      insert_mappings = true,
     }
   }
 }
