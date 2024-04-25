@@ -15,8 +15,7 @@ return {
       vim.keymap.set("n", "<leader>g", _LAZYGIT_TOGGLE, { noremap = true, silent = true })
     end,
     opts = {
-      -- open_mapping    = [[<C-s>]],
-      open_mapping    = [[<C-\>]],
+      open_mapping    = [[<C-m>]],
       direction       = 'float',
       insert_mappings = false,
     },
