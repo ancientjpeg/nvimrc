@@ -16,7 +16,7 @@ vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
-vim.scrolloff = 5
+vim.o.scrolloff = 8
 
 vim.o.updatetime = 50
 vim.o.colorcolumn = "80"
