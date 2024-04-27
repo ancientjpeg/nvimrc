@@ -1,8 +1,6 @@
 -- begin logfile
 local log_path = vim.fn.stdpath('log') .. '/ancientjpeg.log'
 local _CONFIG_LOG_FILE = io.open(log_path, "a")
-
-
 CONFIG_LOG = function(msg)
   io.output(_CONFIG_LOG_FILE)
   local time = vim.fn.strftime("%Y-%m-%dT%H:%M:%S")
