@@ -1,3 +1,16 @@
+-- begin logfile
+local log_path = vim.fn.stdpath('log') .. '/ancientjpeg.log'
+local _CONFIG_LOG_FILE = io.open(log_path, "a")
+
+
+CONFIG_LOG = function(msg)
+  io.output(_CONFIG_LOG_FILE)
+  local time = vim.fn.strftime("%Y-%m-%dT%H:%M:%S")
+  io.write("[" .. time .. "] " .. msg .. '\n')
+end
+
+CONFIG_LOG('===== BEGIN CONFIG LOG =====')
+
 -- source all usr config first
 require("core")
 require("plugin")
@@ -18,3 +31,6 @@ local function local_config()
 end
 
 local_config()
+
+CONFIG_LOG('=====  END CONFIG LOG  =====\n')
+io.close(_CONFIG_LOG_FILE)
