@@ -1,1 +1,2 @@
-return { 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000 }
+return false
+-- return { 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000 }

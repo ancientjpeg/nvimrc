@@ -12,77 +12,24 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- plugin specs
-local plugin_specs = {
-
-  -- [[ lsp ]]
-  -- lsp-zero
-  require('plugin.lsp.lsp-zero'),
-
-  -- treesitter
-  require('plugin.lsp.treesitter'),
-
-  -- incremental rename helper
-  require('plugin.lsp.inc-rename'),
-
-  -- neogen
-  require('plugin.lsp.neogen'),
 
 
-  -- [[ debug ]]
-  require('plugin.debug.nvim-dap'),
-  require('plugin.debug.nvim-dap-ui'),
+local plugin_specs = {}
+local config_path = vim.fn.stdpath('config') .. '/lua/plugin'
+for path in vim.fs.dir(config_path, { depth = 10 }) do
+  if string.match(path, [[%.lua]]) and string.match(path, [[/]]) then
+    path = string.gsub(path, [[%.lua]], ""):gsub("/", ".")
+    path = 'plugin.' .. path
+    local spec = require(path)
 
-  -- [[ nav ]]
-  -- telescope
-  require('plugin.nav.telescope-nvim'),
-
-  -- oil
-  require('plugin.nav.oil-nvim'),
-
-  -- harpoon
-  require('plugin.nav.harpoon'),
+    if spec then
+      CONFIG_LOG(path)
+      table.insert(plugin_specs, spec)
+    end
+  end
+end
 
 
-  -- tmux nav
-  require('plugin.nav.vim-tmux-navigator'),
-
-  -- [[ git ]]
-  require('plugin.git.gitsigns'),
-  require('plugin.git.vim-fugitive'),
-  require('plugin.git.diffview'),
-
-  -- [[ editor ]]
-  -- statusline
-  require('plugin.editor.lualine'),
-
-  -- vim-commentary
-  require('plugin.editor.vim-commentary'),
-
-  -- context
-  require('plugin.editor.nvim-treesitter-context'),
-
-  -- blankline
-  require('plugin.editor.indent-blankline'),
-
-  --noice
-  require('plugin.editor.noice-nvim'),
-
-  --trouble
-  require('plugin.editor.trouble-nvim'),
-
-  -- [[ themes ]]
-  require('plugin.themes.evergreen-nvim'),
-
-  -- [[ misc ]]
-  -- markdown
-  require('plugin.misc.markdown-preview'),
-  -- toggleterm
-  require('plugin.misc.toggleterm-nvim'),
-  -- alpha
-  require('plugin.misc.alpha-nvim'),
-
-}
 
 
 local lazy_config = {
