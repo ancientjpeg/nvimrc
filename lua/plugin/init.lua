@@ -16,8 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 local plugin_specs = {
 
   -- [[ lsp ]]
-  -- lsp-zero
-  require('plugin.lsp.lsp-zero'),
 
   -- treesitter
   require('plugin.lsp.treesitter'),
