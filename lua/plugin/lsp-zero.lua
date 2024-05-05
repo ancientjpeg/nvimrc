@@ -71,6 +71,7 @@ return {
         'eslint',
         'lua_ls',
         'pyright',
+        'relay_lsp',
         'rust_analyzer',
       },
       handlers = {
