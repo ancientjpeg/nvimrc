@@ -36,7 +36,7 @@ return {
       servers     = {
         ['clangd']        = { 'cpp' },
         ['rust_analyzer'] = { 'rust' },
-        ['tsserver']      = { 'javascript', 'typescript' },
+        ['tsserver']      = { 'javascript', 'typescript', 'typescriptreact' },
         ['lua_ls']        = { 'lua' },
       }
     })
@@ -68,24 +68,14 @@ return {
     require('mason').setup({})
     require('mason-lspconfig').setup({
       ensure_installed = {
-        'eslint',
         'lua_ls',
         'pyright',
-        'relay_lsp',
+        'biome',
         'rust_analyzer',
+        'tsserver',
       },
       handlers = {
         lsp_zero.default_setup,
-        eslint = function()
-          require('lspconfig').eslint.setup({
-            on_attach = function(client, bufnr)
-              vim.api.nvim_create_autocmd("BufWritePre", {
-                buffer  = bufnr,
-                command = "EslintFixAll",
-              })
-            end,
-          })
-        end,
         lua_ls = function()
           require('lspconfig').lua_ls.setup {
             on_init  = function(client)
