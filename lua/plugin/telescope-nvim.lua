@@ -26,8 +26,11 @@ return {
 
     telescope.setup({
       defaults = {
-        path_display = { "truncate" },
-        cache_picker = {
+        path_display         = { "truncate" },
+        file_ignore_patterns = {
+          "node_modules"
+        },
+        cache_picker         = {
           num_pickers = 6,
         }
       },
