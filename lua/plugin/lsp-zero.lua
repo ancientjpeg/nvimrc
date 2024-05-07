@@ -73,6 +73,8 @@ return {
         'rust_analyzer',
         'tsserver',
         'cssls',
+        'jsonls',
+        'html'
       },
       handlers = {
         lsp_zero.default_setup,
