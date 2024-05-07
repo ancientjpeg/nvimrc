@@ -15,6 +15,7 @@ return {
         "lua",
         "python",
         "query",
+        "json",
         "tsx",
         "vim",
         "vimdoc",
