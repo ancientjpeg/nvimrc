@@ -20,7 +20,7 @@ return {
       end, {})
     end,
     opts = {
-      open_mapping    = [[<C-t>]],
+      open_mapping    = [[<C-\>]],
       direction       = 'float',
       insert_mappings = false,
     },
