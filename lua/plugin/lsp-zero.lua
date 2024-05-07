@@ -70,9 +70,9 @@ return {
       ensure_installed = {
         'lua_ls',
         'pyright',
-        'biome',
         'rust_analyzer',
         'tsserver',
+        'cssls',
       },
       handlers = {
         lsp_zero.default_setup,
