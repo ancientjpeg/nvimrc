@@ -23,6 +23,8 @@ return {
   },
   config = function()
     local telescope = require('telescope')
+    local actions = require("telescope.actions")
+
 
     telescope.setup({
       defaults = {
@@ -32,7 +34,13 @@ return {
         },
         cache_picker         = {
           num_pickers = 6,
-        }
+        },
+        mappings             = {
+          i = {
+            -- close telescope on first esc
+            ["<esc>"] = actions.close,
+          },
+        },
       },
       extensions = {
         fzf = {
