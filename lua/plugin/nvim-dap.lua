@@ -1,22 +1,27 @@
-return {
+return
+{
   'mfussenegger/nvim-dap',
-  dependencies = {
+  dependencies =
+  {
     'nvim-telescope/telescope-dap.nvim',
-    'mfussenegger/nvim-dap-python'
+    'mfussenegger/nvim-dap-python',
   },
   config = function()
     local dap = require('dap')
 
-    dap.adapters.lldb = {
+    dap.adapters.lldb =
+    {
       type    = 'executable',
       command = 'lldb-dap',
       name    = 'lldb',
-      options = {
-        initialize_timeout_sec = 10
+      options =
+      {
+        initialize_timeout_sec = 10,
       },
     }
 
-    dap.configurations.cpp = {
+    dap.configurations.cpp =
+    {
       {
         name = 'Launch LLDB',
         type = 'lldb',
@@ -39,31 +44,20 @@ return {
         stopOnEntry = false,
         args = {},
       },
-      {
-        name = 'Attach LLDB by PID',
-        type = 'lldb',
-        request = 'attach',
-        cwd = '${workspaceFolder}',
-        pid = function()
-          local id = vim.fn.input("PID: ", "32757")
-          return tonumber(id)
-        end,
-        stopOnEntry = false,
-        args = {},
-      },
     }
 
     -- python
     require('dap-python').setup()
 
-    dap.configurations.python = {
+    dap.configurations.python =
+    {
       {
-        type    = "python",
-        request = "launch",
-        name    = "Debug Tests",
-        module  = "pytest",
-        args    = { "." },
-      }
+        type    = 'python',
+        request = 'launch',
+        name    = 'Debug Tests',
+        module  = 'pytest',
+        args    = { '.', },
+      },
     }
 
     -- telescope
@@ -72,31 +66,33 @@ return {
 
     -- highlights + icons
     -- https://github.com/mfussenegger/nvim-dap/discussions/355#discussioncomment-2159022
-    vim.api.nvim_set_hl(0, 'DapBreakpoint', { ctermbg = 0, fg = '#993939', bg = '#31353f' })
-    vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#61afef', bg = '#31353f' })
-    vim.api.nvim_set_hl(0, 'DapStopped', { ctermbg = 0, fg = '#98c379', bg = '#31353f' })
+    vim.api.nvim_set_hl(0, 'DapBreakpoint', { ctermbg = 0, fg = '#993939', bg = '#31353f', })
+    vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#61afef', bg = '#31353f', })
+    vim.api.nvim_set_hl(0, 'DapStopped', { ctermbg = 0, fg = '#98c379', bg = '#31353f', })
 
-    vim.fn.sign_define('DapBreakpoint', {
+    vim.fn.sign_define('DapBreakpoint',
+    {
       text = '⏹',
       texthl = 'DapBreakpoint',
       linehl = 'DapBreakpoint',
       numhl =
-      'DapBreakpoint'
+      'DapBreakpoint',
     })
     vim.fn.sign_define('DapBreakpointCondition',
-      { text = '⏯', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+      { text = '⏯', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint', })
     vim.fn.sign_define('DapBreakpointRejected',
-      { text = '⚠', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+      { text = '⚠', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint', })
     vim.fn.sign_define('DapLogPoint',
-      { text = '', texthl = 'DapLogPoint', linehl = 'DapLogPoint', numhl = 'DapLogPoint' })
-    vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped', linehl = 'DapStopped', numhl = 'DapStopped' })
+      { text = '', texthl = 'DapLogPoint', linehl = 'DapLogPoint', numhl = 'DapLogPoint', })
+    vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped', linehl = 'DapStopped', numhl = 'DapStopped', })
 
     -- quickly get out of hover windows
-    vim.api.nvim_create_autocmd('FileType', {
+    vim.api.nvim_create_autocmd('FileType',
+    {
       pattern = 'dap-float',
       callback = function()
-        vim.keymap.set('n', 'q', '<cmd>close!<CR>', { buffer = true })
-      end
+        vim.keymap.set('n', 'q', '<cmd>close!<CR>', { buffer = true, })
+      end,
     })
 
     -- keymappings
@@ -128,16 +124,17 @@ return {
     vim.keymap.set('n', '<leader>dc', function() dap.repl.toggle() end)
     vim.keymap.set('n', '<leader>dr', function() dap.run_last() end)
     vim.keymap.set('n', '<leader>dd', function()
-      dap.disconnect({
+      dap.disconnect(
+      {
         restart = false,
-        terminateDebuggee = false
+        terminateDebuggee = false,
       })
     end)
     vim.keymap.set('n', '<leader>dq', function() dap.terminate() end)
-    vim.keymap.set({ 'n', 'v' }, '<leader>dH', function()
+    vim.keymap.set({ 'n', 'v', }, '<leader>dH', function()
       require('dap.ui.widgets').hover()
     end)
-    vim.keymap.set({ 'n', 'v' }, '<leader>dp', function()
+    vim.keymap.set({ 'n', 'v', }, '<leader>dp', function()
       require('dap.ui.widgets').preview()
     end)
     vim.keymap.set('n', '<leader>df', function()
@@ -148,5 +145,5 @@ return {
       local widgets = require('dap.ui.widgets')
       widgets.centered_float(widgets.scopes)
     end)
-  end
+  end,
 }
