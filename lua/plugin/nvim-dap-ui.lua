@@ -14,15 +14,15 @@ return
             elements =
             {
               {
-                id = 'scopes',
-                size = 1 / 3,
-              },
-              {
                 id = 'breakpoints',
                 size = 1 / 3,
               },
               {
                 id = 'stacks',
+                size = 1 / 3,
+              },
+              {
+                id = 'scopes',
                 size = 1 / 3,
               },
             },
@@ -33,11 +33,11 @@ return
             elements =
             {
               {
-                id = 'watches',
+                id = 'repl',
                 size = 0.5,
               },
               {
-                id = 'repl',
+                id = 'watches',
                 size = 0.5,
               },
             },
