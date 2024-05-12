@@ -40,6 +40,8 @@ return
           ['rust_analyzer'] = { 'rust', },
           ['tsserver']      = { 'javascript', 'typescript', 'typescriptreact', },
           ['lua_ls']        = { 'lua', },
+          ['jsonls']        = { 'json', },
+          ['cssls']         = { 'css', },
         },
       })
 
@@ -69,7 +71,17 @@ return
     require('mason').setup({})
     require('mason-lspconfig').setup(
       {
-        ensure_installed = { 'lua_ls', 'pyright', 'rust_analyzer', 'tsserver', 'cssls', 'jsonls', 'html', },
+        ensure_installed =
+        {
+          'lua_ls',
+          'pyright',
+          'rust_analyzer',
+          'tsserver',
+          'cssls',
+          'jsonls',
+          'html',
+        },
+
         handlers =
         {
           lsp_zero.default_setup,
