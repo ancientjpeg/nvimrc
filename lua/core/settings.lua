@@ -19,11 +19,14 @@ vim.o.smartcase = true
 vim.o.scrolloff = 8
 
 vim.o.updatetime = 50
-vim.o.colorcolumn = "80"
+vim.o.colorcolumn = '80'
 
 -- stop auto-comment on newlines https://www.reddit.com/r/neovim/comments/sqld76/stop_automatic_newline_continuation_of_comments/
-vim.cmd("autocmd BufEnter * set formatoptions-=cro")
-vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
+
+-- add tpp to cpp filetype
+vim.cmd('au! BufNewFile,BufRead *.tpp set filetype=cpp')
 
 -- filetype indent on
 vim.cmd('filetype plugin indent on')
