@@ -4,7 +4,7 @@ return
   dependencies =
   {
     'nvim-telescope/telescope-dap.nvim',
-    'mfussenegger/nvim-dap-python',
+    { 'mfussenegger/nvim-dap-python', config = false, },
   },
   config = function()
     local dap = require('dap')
@@ -49,16 +49,16 @@ return
     -- python
     require('dap-python').setup()
 
-    dap.configurations.python =
-    {
+    table.insert(dap.configurations.python,
       {
-        type    = 'python',
-        request = 'launch',
-        name    = 'Debug Tests',
-        module  = 'pytest',
-        args    = { '.', },
-      },
-    }
+        {
+          type    = 'python',
+          request = 'launch',
+          name    = 'Debug Tests',
+          module  = 'pytest',
+          args    = { '.', },
+        },
+      })
 
     -- telescope
     local telescope = require('telescope')
@@ -71,13 +71,13 @@ return
     vim.api.nvim_set_hl(0, 'DapStopped', { ctermbg = 0, fg = '#98c379', bg = '#31353f', })
 
     vim.fn.sign_define('DapBreakpoint',
-    {
-      text = '⏹',
-      texthl = 'DapBreakpoint',
-      linehl = 'DapBreakpoint',
-      numhl =
-      'DapBreakpoint',
-    })
+      {
+        text = '⏹',
+        texthl = 'DapBreakpoint',
+        linehl = 'DapBreakpoint',
+        numhl =
+        'DapBreakpoint',
+      })
     vim.fn.sign_define('DapBreakpointCondition',
       { text = '⏯', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint', })
     vim.fn.sign_define('DapBreakpointRejected',
@@ -88,12 +88,12 @@ return
 
     -- quickly get out of hover windows
     vim.api.nvim_create_autocmd('FileType',
-    {
-      pattern = 'dap-float',
-      callback = function()
-        vim.keymap.set('n', 'q', '<cmd>close!<CR>', { buffer = true, })
-      end,
-    })
+      {
+        pattern = 'dap-float',
+        callback = function()
+          vim.keymap.set('n', 'q', '<cmd>close!<CR>', { buffer = true, })
+        end,
+      })
 
     -- keymappings
     -- https://www.reddit.com/r/neovim/comments/12wypuf/what_has_been_peoples_experience_with_nvimdap_or/
@@ -125,10 +125,10 @@ return
     vim.keymap.set('n', '<leader>dr', function() dap.run_last() end)
     vim.keymap.set('n', '<leader>dd', function()
       dap.disconnect(
-      {
-        restart = false,
-        terminateDebuggee = false,
-      })
+        {
+          restart = false,
+          terminateDebuggee = false,
+        })
     end)
     vim.keymap.set('n', '<leader>dq', function() dap.terminate() end)
     vim.keymap.set({ 'n', 'v', }, '<leader>dH', function()

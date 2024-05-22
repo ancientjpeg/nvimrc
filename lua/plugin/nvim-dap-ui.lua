@@ -5,48 +5,7 @@ return
   config       = function()
     local dap, dapui = require('dap'), require('dapui')
 
-    dapui.setup(
-      {
-
-        layouts =
-        {
-          {
-            elements =
-            {
-              {
-                id = 'breakpoints',
-                size = 1 / 3,
-              },
-              {
-                id = 'stacks',
-                size = 1 / 3,
-              },
-              {
-                id = 'scopes',
-                size = 1 / 3,
-              },
-            },
-            position = 'left',
-            size = 40,
-          },
-          {
-            elements =
-            {
-              {
-                id = 'repl',
-                size = 0.5,
-              },
-              {
-                id = 'watches',
-                size = 0.5,
-              },
-            },
-            position = 'bottom',
-            size = 10,
-          },
-
-        },
-      })
+    dapui.setup({})
 
     -- uncomment these if you want the UI to open/close automatically
     -- dap.listeners.before.attach.dapui_config = function()
