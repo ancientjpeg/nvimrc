@@ -28,6 +28,9 @@ vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 -- add tpp to cpp filetype
 vim.cmd('au! BufNewFile,BufRead *.tpp set filetype=cpp')
 
+-- add .dist to xml
+vim.cmd('au! BufNewFile,BufRead *.dist set filetype=xml')
+
 -- filetype indent on
 vim.cmd('filetype plugin indent on')
 
