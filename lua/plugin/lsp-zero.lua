@@ -36,12 +36,11 @@ return
         format_opts = { async = false, timeout_ms = 10000, },
         servers     =
         {
-          ['clangd']        = { 'cpp', },
-          ['rust_analyzer'] = { 'rust', },
-          ['tsserver']      = { 'javascript', 'typescript', 'typescriptreact', },
-          ['lua_ls']        = { 'lua', },
-          ['jsonls']        = { 'json', },
-          ['cssls']         = { 'css', },
+          ['clangd']   = { 'cpp', },
+          ['tsserver'] = { 'javascript', 'typescript', 'typescriptreact', },
+          ['lua_ls']   = { 'lua', },
+          ['jsonls']   = { 'json', },
+          ['cssls']    = { 'css', },
         },
       })
 
@@ -75,7 +74,6 @@ return
         {
           'lua_ls',
           'pyright',
-          'rust_analyzer',
           'tsserver',
           'cssls',
           'jsonls',

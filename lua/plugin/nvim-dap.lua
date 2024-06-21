@@ -46,18 +46,18 @@ return
       },
     }
 
-    dap.configurations.rust =
-    {
-      {
-        name = 'Launch LLDB',
-        type = 'lldb',
-        request = 'launch',
-        program = '${workspaceFolder}/target/debug/${workspaceFolderBasename}',
-        cwd = '${workspaceFolder}',
-        stopOnEntry = false,
-        args = {},
-      },
-    }
+    -- dap.configurations.rust =
+    -- {
+    --   {
+    --     name = 'Launch LLDB',
+    --     type = 'lldb',
+    --     request = 'launch',
+    --     program = '${workspaceFolder}/target/debug/${workspaceFolderBasename}',
+    --     cwd = '${workspaceFolder}',
+    --     stopOnEntry = false,
+    --     args = {},
+    --   },
+    -- }
 
     -- python
     require('dap-python').setup()
