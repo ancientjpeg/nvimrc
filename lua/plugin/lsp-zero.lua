@@ -66,15 +66,6 @@ return
     vim.keymap.set('n', 'ø', vim.cmd.ClangdSwitchSourceHeader)
     vim.keymap.set('n', '<M-o>', vim.cmd.ClangdSwitchSourceHeader)
 
-    -- rust_analyzer setup because what in god's name
-    lspconfig.rust_analyzer.setup(
-      {
-        cmd =
-        {
-          'rust-analyzer',
-        },
-      })
-
 
     -- install other LSPs via mason
     require('mason').setup({})
@@ -84,6 +75,7 @@ return
         {
           'lua_ls',
           'pyright',
+          'rust_analyzer',
           'tsserver',
           'cssls',
           'jsonls',
