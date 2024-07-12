@@ -21,5 +21,6 @@ return
   {
     { '<leader>cg', '<cmd>CMakeGenerate<cr>', },
     { '<leader>cb', '<cmd>CMakeBuild<cr>', },
+    { '<leader>cq', '<cmd>CMakeStopExecutor<cr>', },
   },
 }
