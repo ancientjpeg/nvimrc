@@ -11,7 +11,7 @@ return
     {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = '\
-      cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=clang && \
+      cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=clang --fresh && \
       cmake --build build --config Release && \
       cmake --install build --prefix build',
     },
