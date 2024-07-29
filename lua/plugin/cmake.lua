@@ -18,9 +18,7 @@ return
     --   name = 'toggleterm',
     --   opts =
     --   {
-    --     direction = 'float', -- 'vertical' | 'horizontal' | 'tab' | 'float'
-    --     close_on_exit = false, -- whether close the terminal when exit
-    --     auto_scroll = true,  -- whether auto scroll to the bottom
+    --     direction = 'horizontal',
     --   },
     -- },
   },

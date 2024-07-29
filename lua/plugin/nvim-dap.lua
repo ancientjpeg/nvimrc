@@ -6,6 +6,7 @@ return
     'nvim-telescope/telescope-dap.nvim',
     { 'mfussenegger/nvim-dap-python', config = false, },
   },
+  tag = '0.7.0',
   config = function()
     local dap = require('dap')
 
