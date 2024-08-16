@@ -22,5 +22,8 @@ return
     -- end
 
     vim.keymap.set('n', '<leader>du', dapui.toggle)
+    vim.keymap.set('n', '<leader>dU', function()
+      dapui.toggle({ reset = true, })
+    end)
   end,
 }
