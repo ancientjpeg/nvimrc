@@ -26,9 +26,11 @@ return
   {
     { '<leader>cg', '<cmd>CMakeGenerate<cr>', },
     { '<leader>cb', '<cmd>CMakeBuild<cr>', },
+    { '<leader>cB', '<cmd>CMakeSelectBuildTarget<cr>', },
     { '<leader>cd', '<cmd>CMakeDebug<cr>', },
     { '<leader>cr', '<cmd>CMakeRun<cr>', },
     { '<leader>cq', '<cmd>CMakeStopExecutor<cr>', },
     { '<leader>cQ', '<cmd>CMakeStopRunner<cr>', },
+    { '<leader>cl', '<cmd>CMakeSelectLaunchTarget<cr>', },
   },
 }
