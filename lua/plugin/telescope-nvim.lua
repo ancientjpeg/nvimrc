@@ -10,10 +10,7 @@ return
     -- fuzzy finder algo
     {
       'nvim-telescope/telescope-fzf-native.nvim',
-      build = '\
-      cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=clang --fresh && \
-      cmake --build build --config Release && \
-      cmake --install build --prefix build',
+      build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release --fresh -GNinja && cmake --build build --config Release',
     },
     -- ripgrep args pass
     {
@@ -29,58 +26,58 @@ return
 
 
     telescope.setup(
-    {
-      defaults =
       {
-        path_display         = { 'truncate', },
-        file_ignore_patterns =
+        defaults =
         {
-          'node_modules',
-        },
-        cache_picker         =
-        {
-          num_pickers = 6,
-        },
-        mappings             =
-        {
-          i =
+          path_display         = { 'truncate', },
+          file_ignore_patterns =
           {
-            -- close telescope on first esc
-            ['<esc>'] = actions.close,
+            'node_modules',
+          },
+          cache_picker         =
+          {
+            num_pickers = 6,
+          },
+          mappings             =
+          {
+            i =
+            {
+              -- close telescope on first esc
+              ['<esc>'] = actions.close,
+            },
           },
         },
-      },
-      extensions =
-      {
-        fzf =
+        extensions =
         {
-          fuzzy                   = true,          -- false will only do exact matching
-          override_generic_sorter = true,          -- override the generic sorter
-          override_file_sorter    = true,          -- override the file sorter
-          case_mode               = 'ignore_case', -- or "ignore_case" or "respect_case"
+          fzf =
+          {
+            fuzzy                   = true,          -- false will only do exact matching
+            override_generic_sorter = true,          -- override the generic sorter
+            override_file_sorter    = true,          -- override the file sorter
+            case_mode               = 'ignore_case', -- or "ignore_case" or "respect_case"
+          },
         },
-      },
-    })
+      })
     telescope.load_extension('fzf')
 
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
     vim.keymap.set('n', '<leader>fF', function()
       builtin.find_files(
-      {
-        find_command     =
-        {                    -- solely to exclude .git from searches
-          'rg',
-          '--files',
-          '--hidden',
-          '--no-ignore',
-          '--glob',
-          '!.git',
-        },
-        no_ignore        = true,
-        no_ignore_parent = true,
-        hidden           = true,
-      })
+        {
+          find_command     =
+          { -- solely to exclude .git from searches
+            'rg',
+            '--files',
+            '--hidden',
+            '--no-ignore',
+            '--glob',
+            '!.git',
+          },
+          no_ignore        = true,
+          no_ignore_parent = true,
+          hidden           = true,
+        })
     end)
     vim.keymap.set('n', '<leader>fg', telescope.extensions.live_grep_args.live_grep_args)
     vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
