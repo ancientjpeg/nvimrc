@@ -1,11 +1,13 @@
 return
 {
-  'Civitasv/cmake-tools.nvim',
+  'ancientjpeg/cmake-tools.nvim',
+  branch = 'remove-cmake-buffer',
   config = true,
   opts =
   {
     cmake_build_directory = 'build',
     cmake_soft_link_compile_commands = true,
+    use_scratch = false,
     cmake_dap_configuration =
     { -- debug settings for cmake
       name = 'CMake - cpp',
