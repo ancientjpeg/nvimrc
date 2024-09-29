@@ -6,7 +6,7 @@ return
   opts =
   {
     cmake_build_directory = 'build',
-    cmake_soft_link_compile_commands = true,
+    cmake_soft_link_compile_commands = false,
     use_scratch = false,
     cmake_dap_configuration =
     { -- debug settings for cmake
