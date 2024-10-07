@@ -55,7 +55,7 @@ return
         init_options = { compilationDatabasePath = 'build', },
         cmd =
         {
-          'clangd',
+          vim.fn.has('macunix') and '/opt/homebrew/opt/llvm/bin/clangd' or 'clangd',
           '--function-arg-placeholders=0',
           '--clang-tidy',
           '--background-index',
