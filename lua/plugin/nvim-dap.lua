@@ -13,7 +13,7 @@ return
     dap.adapters.lldb =
     {
       type    = 'executable',
-      command = vim.fn.exepath('lldb-dap'),
+      command = (vim.fn.has('macunix') ~= 0) and vim.fn.exepath('lldb-dap') or 'C:\\Program Files\\LLVM\\bin\\lldb-dap',
       name    = 'lldb',
       options =
       {
