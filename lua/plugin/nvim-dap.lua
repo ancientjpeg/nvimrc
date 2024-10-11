@@ -45,6 +45,26 @@ return
         stopOnEntry = false,
         args = {},
       },
+      {
+        name = 'Attach LLDB (Wait)',
+        type = 'lldb',
+        request = 'attach',
+        cwd = '${workspaceFolder}',
+        program = 'build/plugins/current/juce_vst3_helper',
+        stopOnEntry = false,
+        args = {},
+        initialize_timeout_sec = 30,
+        waitFor = true,
+      },
+      -- {
+      --   name = 'Unit Tests',
+      --   type = 'lldb',
+      --   request = 'launch',
+      --   cwd = '${workspaceFolder}',
+      --   program = 'build/unit_tests/unit_tests_artefacts/Debug/unit_tests',
+      --   stopOnEntry = false,
+      --   args = { '[networking]', },
+      -- },
     }
 
     dap.configurations.c = dap.configurations.cpp
