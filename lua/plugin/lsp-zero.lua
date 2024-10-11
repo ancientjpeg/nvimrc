@@ -42,6 +42,7 @@ return
           ['lua_ls']        = { 'lua', },
           ['jsonls']        = { 'json', },
           ['cssls']         = { 'css', },
+          ['svelte']        = { 'svelte', },
         },
       })
 
@@ -80,6 +81,7 @@ return
           'cssls',
           'jsonls',
           'html',
+          'svelte',
         },
 
         handlers =
