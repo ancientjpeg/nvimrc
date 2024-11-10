@@ -5,11 +5,11 @@ return
     local i             = require('neogen.types.template').item
     local doxygen_setup =
     {
-      { nil, '/**',                                               { no_results = true, type = { 'func', 'file', 'class', }, }, },
-      { nil, ' * @file $1',                                       { no_results = true, type = { 'file', }, }, },
-      { nil, ' * @author Jackson Kaplan (jackson@minimal.audio)', { no_results = true, type = { 'file', }, }, },
-      { nil, ' * @date ' .. os.date('%Y-%m-%d'),                  { no_results = true, type = { 'file', }, }, },
-      { nil, ' * Copyright (c) 2024. All rights reserved.',       { no_results = true, type = { 'file', }, }, },
+      { nil, '/**',                                           { no_results = true, type = { 'func', 'file', 'class', }, }, },
+      { nil, ' * @file $1',                                   { no_results = true, type = { 'file', }, }, },
+      { nil, ' * @author Jackson Kaplan (JwyattK@gmail.com)', { no_results = true, type = { 'file', }, }, },
+      { nil, ' * @date ' .. os.date('%Y-%m-%d'),              { no_results = true, type = { 'file', }, }, },
+      { nil, ' * Copyright (c) 2024. All rights reserved.',   { no_results = true, type = { 'file', }, }, },
       {
         nil,
         ' */',
