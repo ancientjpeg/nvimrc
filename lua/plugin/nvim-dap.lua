@@ -83,7 +83,7 @@ return
     }
 
     -- python
-    require('dap-python').setup()
+    require('dap-python').setup('python')
 
     table.insert(dap.configurations.python,
       {
