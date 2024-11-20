@@ -87,14 +87,13 @@ return
 
     table.insert(dap.configurations.python,
       {
-        {
-          type    = 'python',
-          request = 'launch',
-          name    = 'Debug Tests',
-          module  = 'pytest',
-          args    = { '.', },
-        },
-      })
+        type    = 'python',
+        request = 'launch',
+        name    = 'Debug Tests',
+        module  = 'pytest',
+        args    = { '.', },
+      }
+    )
 
     -- telescope
     local telescope = require('telescope')
