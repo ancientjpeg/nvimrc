@@ -36,7 +36,7 @@ return
         format_opts = { async = false, timeout_ms = 10000, },
         servers     =
         {
-          ['clangd']        = { 'cpp', },
+          ['clangd']        = { 'c', 'cpp', },
           ['rust_analyzer'] = { 'rust', },
           ['ts_ls']         = { 'javascript', 'typescript', 'typescriptreact', },
           ['lua_ls']        = { 'lua', },
