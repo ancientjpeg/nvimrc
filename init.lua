@@ -1,26 +1,27 @@
 -- begin logfile
-local log_path = vim.fn.stdpath('log') .. '/ancientjpeg.log'
+-- local log_path = vim.fn.stdpath('log') .. '/ancientjpeg.log'
 
-local log_file = io.open(log_path, "a")
-if log_file:seek('end') > math.pow(2, 16) then
-  log_file:close()
-  log_file = io.open(log_path, "w")
-end
+-- local log_file = io.open(log_path, "a")
+-- if log_file:seek('end') > math.pow(2, 16) then
+--   log_file:close()
+--   log_file = io.open(log_path, "w")
+-- end
 
-CONFIG_LOG = function(msg)
-  local time = vim.fn.strftime("%Y-%m-%dT%H:%M:%S")
-  log_file:write("[" .. time .. "] " .. msg .. '\n')
-end
+-- CONFIG_LOG = function(msg)
+--   local time = vim.fn.strftime("%Y-%m-%dT%H:%M:%S")
+--   log_file:write("[" .. time .. "] " .. msg .. '\n')
+-- end
 
-CONFIG_LOG('===== BEGIN CONFIG LOG =====')
+-- CONFIG_LOG('===== BEGIN CONFIG LOG =====')
 
 -- source all usr config first
-require("core")
+require('core')
 
 -- install lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
+  vim.fn.system(
+  {
     'git',
     'clone',
     '--filter=blob:none',
@@ -31,17 +32,20 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local lazy_config = {
-  install = {
-    colorscheme = {
-      'everforest'
-    }
-  }
+local lazy_config =
+{
+  install =
+  {
+    colorscheme =
+    {
+      'everforest',
+    },
+  },
 }
 
 -- setup lazy.nvim and source plugin specs
 require('lazy').setup(
-  "plugin",
+  'plugin',
   lazy_config
 )
 
@@ -62,5 +66,5 @@ end
 
 local_config()
 
-CONFIG_LOG('=====  END CONFIG LOG  =====\n')
-log_file:close()
+-- CONFIG_LOG('=====  END CONFIG LOG  =====\n')
+-- log_file:close()
