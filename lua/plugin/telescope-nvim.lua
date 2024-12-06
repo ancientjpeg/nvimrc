@@ -10,7 +10,7 @@ return
     -- fuzzy finder algo
     {
       'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release --fresh -GNinja && cmake --build build --config Release',
+      build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -GNinja && cmake --build build --config Release',
     },
     -- ripgrep args pass
     {
