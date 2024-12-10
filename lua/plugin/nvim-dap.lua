@@ -50,21 +50,25 @@ return
         type = 'lldb',
         request = 'attach',
         cwd = '${workspaceFolder}',
-        program = 'build/plugins/current/juce_vst3_helper',
+        program = function()
+          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
         stopOnEntry = false,
         args = {},
         initialize_timeout_sec = 30,
         waitFor = true,
       },
-      -- {
-      --   name = 'Unit Tests',
-      --   type = 'lldb',
-      --   request = 'launch',
-      --   cwd = '${workspaceFolder}',
-      --   program = 'build/unit_tests/unit_tests_artefacts/Debug/unit_tests',
-      --   stopOnEntry = false,
-      --   args = { '[networking]', },
-      -- },
+      {
+        name = 'Unit Tests',
+        type = 'lldb',
+        request = 'launch',
+        cwd = '${workspaceFolder}',
+        program = 'build/unit_tests/unit_tests_artefacts/Debug/unit_tests',
+        stopOnEntry = false,
+        args = function()
+          return vim.fn.input('Unit test tags: ')
+        end,
+      },
     }
 
     dap.configurations.c = dap.configurations.cpp
