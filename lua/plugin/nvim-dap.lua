@@ -66,7 +66,8 @@ return
         program = 'build/unit_tests/unit_tests_artefacts/Debug/unit_tests',
         stopOnEntry = false,
         args = function()
-          return vim.fn.input('Unit test tags: ')
+          final_args = vim.fn.input('Unit test tags: ')
+          return { final_args, }
         end,
       },
     }
