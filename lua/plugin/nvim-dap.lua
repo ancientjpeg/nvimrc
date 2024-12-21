@@ -102,6 +102,16 @@ return
       }
     )
 
+    table.insert(dap.configurations.python,
+      {
+        type    = 'python',
+        request = 'launch',
+        name    = 'Debug MA Tests',
+        module  = 'pytest',
+        args    = { 'extras/ma_build_and_deploy', },
+      }
+    )
+
     -- telescope
     local telescope = require('telescope')
     telescope.load_extension('dap')
