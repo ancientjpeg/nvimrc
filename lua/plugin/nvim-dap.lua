@@ -3,12 +3,10 @@ return
   'mfussenegger/nvim-dap',
   dependencies =
   {
-    {
-      'nvim-telescope/telescope-dap.nvim',
-      commit = '8c88d9716c91eaef1cdea13cb9390d8ef447dbfe',
-    },
+    'nvim-telescope/telescope-dap.nvim',
     { 'mfussenegger/nvim-dap-python', config = false, },
   },
+  tag = '0.7.0',
   config = function()
     local dap = require('dap')
 
