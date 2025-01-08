@@ -9,7 +9,7 @@ return
       { nil, ' * @file $1',                                   { no_results = true, type = { 'file', }, }, },
       { nil, ' * @author Jackson Kaplan (JwyattK@gmail.com)', { no_results = true, type = { 'file', }, }, },
       { nil, ' * @date ' .. os.date('%Y-%m-%d'),              { no_results = true, type = { 'file', }, }, },
-      { nil, ' * Copyright (c) 2024. All rights reserved.',   { no_results = true, type = { 'file', }, }, },
+      { nil, ' * Copyright (c) 2025. All rights reserved.',   { no_results = true, type = { 'file', }, }, },
       {
         nil,
         ' */',
