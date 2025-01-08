@@ -7,6 +7,7 @@ return
   {
     cmake_build_directory = 'build',
     cmake_soft_link_compile_commands = false,
+    cmake_regenerate_on_save = false,
     use_scratch = false,
     cmake_dap_configuration =
     { -- debug settings for cmake
