@@ -59,6 +59,17 @@ return
         waitFor = true,
       },
       {
+        name = 'Attach To Live (Wait)',
+        type = 'lldb',
+        request = 'attach',
+        cwd = '${workspaceFolder}',
+        program = '/Applications/Ableton Live 12 Suite.app/Contents/MacOS/Live',
+        stopOnEntry = false,
+        args = {},
+        initialize_timeout_sec = 30,
+        waitFor = true,
+      },
+      {
         name = 'Unit Tests',
         type = 'lldb',
         request = 'launch',
