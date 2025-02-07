@@ -1,24 +1,28 @@
-return {
+return
+{
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   config = function()
     local treesitter_configs = require('nvim-treesitter.configs')
-    treesitter_configs.setup({
+    treesitter_configs.setup(
+    {
 
       -- A list of parser names, or "all"
-      ensure_installed = {
-        "c",
-        "cpp",
-        "lua",
-        "rust",
-        "bash",
-        "lua",
-        "python",
-        "query",
-        "json",
-        "tsx",
-        "vim",
-        "vimdoc",
+      ensure_installed =
+      {
+        'c',
+        'cpp',
+        'lua',
+        'rust',
+        'bash',
+        'lua',
+        'python',
+        'query',
+        'json',
+        'tsx',
+        'vim',
+        'vimdoc',
+        'svelte',
       },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -27,12 +31,13 @@ return {
       -- Automatically install missing parsers when entering buffer
       auto_install = false,
 
-      highlight = {
+      highlight =
+      {
         -- `false` will disable the whole extension
         enable = true,
 
         -- list of language that will be disabled
-        disable = { "c", "cpp", "rust" },
+        disable = { 'c', 'cpp', 'rust', },
 
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
@@ -42,5 +47,5 @@ return {
       },
 
     })
-  end
+  end,
 }
