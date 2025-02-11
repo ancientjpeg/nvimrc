@@ -48,7 +48,6 @@ require('lazy').setup(
   'plugin',
   lazy_config
 )
-print('CONFIG!')
 
 -- run additional config if present
 -- local function local_config()
