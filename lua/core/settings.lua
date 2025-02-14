@@ -28,6 +28,12 @@ vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 -- add tpp to cpp filetype
 vim.cmd('au! BufNewFile,BufRead *.tpp set filetype=cpp')
 
+vim.filetype.add(
+  {
+    pattern = { ['.*/.github/workflows/.*%.yml'] = 'ghaction.yaml', },
+  }
+)
+
 -- Create cmake filetype
 vim.cmd('au! BufNewFile,BufRead CMakeLists.txt set filetype=cmake')
 
@@ -42,12 +48,13 @@ vim.o.swapfile = false
 
 
 vim.api.nvim_create_autocmd('FileType',
-{
-  pattern = 'cmake',
-  callback = function()
-    vim.opt_local.tabstop = 4
-    vim.opt_local.softtabstop = 0
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.expandtab = true
-  end,
-})
+  {
+    pattern = 'cmake',
+    callback = function()
+      vim.opt_local.tabstop = 4
+      vim.opt_local.softtabstop = 0
+      vim.opt_local.shiftwidth = 4
+      vim.opt_local.expandtab = true
+    end,
+  }
+)

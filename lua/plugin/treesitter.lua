@@ -25,6 +25,7 @@ return
           'svelte',
           'javascript',
           'typescript',
+          'yaml',
         },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
