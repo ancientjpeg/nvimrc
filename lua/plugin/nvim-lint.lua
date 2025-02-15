@@ -10,8 +10,8 @@ return
         require('lint').linters_by_ft =
         {
           ['ghaction.yaml'] = { 'actionlint', },
-          javascript = { 'eslint_d', },
-          typescript = { 'eslint_d', },
+          -- javascript = { 'eslint_d', },
+          -- typescript = { 'eslint_d', },
           text = { 'vale', },
           markdown = { 'vale', },
           python = { 'pylint', },
