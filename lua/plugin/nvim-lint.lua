@@ -12,7 +12,7 @@ return
           ['ghaction.yaml'] = { 'actionlint', },
           -- javascript = { 'eslint_d', },
           -- typescript = { 'eslint_d', },
-          text = { 'vale', },
+          -- text = { 'vale', },
           markdown = { 'vale', },
           python = { 'pylint', },
         }
