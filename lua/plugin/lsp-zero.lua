@@ -61,6 +61,7 @@ return
           '--clang-tidy',
           '--background-index',
           '--header-insertion=never',
+          '--log=error',
         },
       })
     -- clangd-specific binding
