@@ -82,11 +82,30 @@ return
           'jsonls',
           'html',
           'svelte',
+          'tailwindcss',
         },
 
         handlers =
         {
           lsp_zero.default_setup,
+          tailwindcss = function()
+            require('lspconfig').tailwindcss.setup
+            {
+              settings =
+              { tailwindCSS =
+              {
+                experimental =
+                {
+                  classRegex =
+                  {
+                    'class\\(([^)]*)\\)', "[\"'`]([^\"'`]*).*?[\"'`]",
+                  },
+                },
+
+              },
+              },
+            }
+          end,
           lua_ls = function()
             require('lspconfig').lua_ls.setup
             {
