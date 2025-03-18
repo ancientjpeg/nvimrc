@@ -66,7 +66,7 @@ return
         program = '/Applications/Ableton Live 12 Suite.app/Contents/MacOS/Live',
         stopOnEntry = false,
         args = {},
-        initialize_timeout_sec = 30,
+        initialize_timeout_sec = 0,
         waitFor = true,
       },
       {

@@ -83,6 +83,7 @@ return
           'html',
           'svelte',
           'tailwindcss',
+          'lemminx',
         },
 
         handlers =
