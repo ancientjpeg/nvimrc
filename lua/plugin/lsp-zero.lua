@@ -81,6 +81,8 @@ return
           'jsonls',
           'html',
           'svelte',
+          'ruff',
+          'pyright',
           'tailwindcss',
           'lemminx',
         },

@@ -17,15 +17,12 @@ return
       -- typescript = { 'eslint_d', },
       -- text = { 'vale', },
       markdown = { 'vale', },
-      python = { 'ruff', },
+      -- note: ruff LSP for python should be enough, dont also need a linter.
     }
 
     require('mason-nvim-lint').setup(
       {
-        ensure_installed =
-        {
-          'ruff',
-        },
+        ensure_installed = { 'actionlint', },
       })
 
     vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWrite', 'BufModifiedSet', },
