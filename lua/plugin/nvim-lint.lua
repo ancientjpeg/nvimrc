@@ -1,32 +1,38 @@
 return
 {
-  'rshkarin/mason-nvim-lint',
+  'mfussenegger/nvim-lint',
   dependencies =
   {
     {
-      'mfussenegger/nvim-lint',
-      dependencies = { 'williamboman/mason.nvim', },
-      config = function()
-        require('lint').linters_by_ft =
-        {
-          ['ghaction.yaml'] = { 'actionlint', },
-          -- javascript = { 'eslint_d', },
-          -- typescript = { 'eslint_d', },
-          -- text = { 'vale', },
-          markdown = { 'vale', },
-          python = { 'pylint', },
-        }
-
-        vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWrite', 'BufModifiedSet', },
-          {
-            callback = function()
-              require('lint').try_lint()
-            end,
-          })
-      end,
+      'williamboman/mason.nvim',
+      'rshkarin/mason-nvim-lint',
     },
   },
   config = function()
-    require('mason-nvim-lint').setup({})
+    local lint = require('lint')
+    lint.linters_by_ft =
+    {
+      ['ghaction.yaml'] = { 'actionlint', },
+      -- javascript = { 'eslint_d', },
+      -- typescript = { 'eslint_d', },
+      -- text = { 'vale', },
+      markdown = { 'vale', },
+      python = { 'ruff', },
+    }
+
+    require('mason-nvim-lint').setup(
+      {
+        ensure_installed =
+        {
+          'ruff',
+        },
+      })
+
+    vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWrite', 'BufModifiedSet', },
+      {
+        callback = function()
+          require('lint').try_lint()
+        end,
+      })
   end,
 }
