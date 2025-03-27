@@ -2,6 +2,8 @@ return
 {
   'rcarriga/nvim-dap-ui',
   dependencies = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio', },
+  -- https://github.com/rcarriga/nvim-dap-ui/issues/442
+  tag          = 'v3.8.2',
   config       = function()
     local dap, dapui = require('dap'), require('dapui')
 
