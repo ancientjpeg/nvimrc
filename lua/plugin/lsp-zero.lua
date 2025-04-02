@@ -38,7 +38,7 @@ return
         {
           ['clangd']        = { 'c', 'cpp', },
           ['rust_analyzer'] = { 'rust', },
-          ['ts_ls']         = { 'javascript', 'typescript', 'typescriptreact', },
+          -- ['ts_ls']         = { 'javascript', 'typescript', 'typescriptreact', },
           ['lua_ls']        = { 'lua', },
           ['jsonls']        = { 'json', },
           ['cssls']         = { 'css', },
