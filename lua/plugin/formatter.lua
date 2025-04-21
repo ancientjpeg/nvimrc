@@ -5,8 +5,13 @@ return
   config = function()
     -- TODO find a way to not do this ?? idiot ???
     local registry = require('mason-registry')
-    if not registry.is_installed('prettierd') then
-      registry.get_package('prettierd'):install()
+
+    local formatters = { 'prettierd', 'xmlformatter', }
+
+    for _, f in pairs(formatters) do
+      if not registry.is_installed(f) then
+        registry.get_package(f):install()
+      end
     end
 
     local patch_exe = function(f, exe)
