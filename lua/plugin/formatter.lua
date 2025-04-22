@@ -6,7 +6,7 @@ return
     -- TODO find a way to not do this ?? idiot ???
     local registry = require('mason-registry')
 
-    local formatters = { 'prettierd', 'xmlformatter', }
+    local formatters = { 'prettierd', }
 
     for _, f in pairs(formatters) do
       if not registry.is_installed(f) then
@@ -26,10 +26,6 @@ return
     local formatter = require('formatter')
     local fts = require('formatter.filetypes')
     local prettierd_path = vim.fn.stdpath('data') .. '/mason/bin/prettierd'
-    -- local prettierd_config_js = require('formatter.filetypes.javascript').prettierd()
-    -- local prettierd_config_ts = require('formatter.filetypes.typescript').prettierd()
-    -- prettierd_config_js.exe = prettierd_path
-    -- prettierd_config_ts.exe = prettierd_path
 
     formatter.setup(
       {
