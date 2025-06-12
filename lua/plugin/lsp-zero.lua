@@ -85,6 +85,7 @@ return
           'pyright',
           'tailwindcss',
           'lemminx',
+          'gopls',
         },
 
         handlers =
