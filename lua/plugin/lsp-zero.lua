@@ -43,6 +43,7 @@ return
           ['jsonls']        = { 'json', },
           ['cssls']         = { 'css', },
           ['svelte']        = { 'svelte', },
+          ['gopls']         = { 'go', },
         },
       })
 
