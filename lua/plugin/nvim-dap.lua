@@ -5,6 +5,7 @@ return
   {
     'nvim-telescope/telescope-dap.nvim',
     { 'mfussenegger/nvim-dap-python', config = false, },
+    { 'leoluz/nvim-dap-go',           config = false, },
   },
   config = function()
     local dap = require('dap')
@@ -76,7 +77,7 @@ return
         program = 'build/unit_tests/unit_tests_artefacts/Debug/unit_tests',
         stopOnEntry = false,
         args = function()
-          final_args = vim.fn.input('Unit test tags: ')
+          local final_args = vim.fn.input('Unit test tags: ')
           return { final_args, }
         end,
       },
@@ -96,6 +97,9 @@ return
         args = {},
       },
     }
+
+    -- go
+    require('dap-go').setup()
 
     -- python
     require('dap-python').setup('python')
@@ -119,6 +123,8 @@ return
         args    = { 'extras/ma_build_and_deploy', },
       }
     )
+
+
 
     -- telescope
     local telescope = require('telescope')

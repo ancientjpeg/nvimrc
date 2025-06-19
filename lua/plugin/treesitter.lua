@@ -12,6 +12,7 @@ return
         {
           'c',
           'cpp',
+          'go',
           'lua',
           'rust',
           'bash',
