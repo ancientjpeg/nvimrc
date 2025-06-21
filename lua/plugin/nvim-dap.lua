@@ -215,5 +215,11 @@ return
       local widgets = require('dap.ui.widgets')
       widgets.centered_float(widgets.scopes)
     end)
+    vim.keymap.set('n', '<leader>dgt', function()
+      require('dap-go').debug_test()
+    end)
+    vim.keymap.set('n', '<leader>dgr', function()
+      require('dap-go').debug_last_test()
+    end)
   end,
 }
