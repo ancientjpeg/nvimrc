@@ -44,12 +44,11 @@ return
           ['cssls']         = { 'css', },
           ['svelte']        = { 'svelte', },
           ['gopls']         = { 'go', },
+          ['ruby_lsp']      = { 'ruby', },
         },
       })
 
-
     local lspconfig = require('lspconfig')
-
 
     -- clangd setup (already installed from brew)
     lspconfig.clangd.setup(
@@ -69,6 +68,11 @@ return
     vim.keymap.set('n', 'ø', vim.cmd.ClangdSwitchSourceHeader)
     vim.keymap.set('n', '<M-o>', vim.cmd.ClangdSwitchSourceHeader)
 
+    -- ruby-lsp setup, as Mason can't keep track of changing rbenv versions
+    lspconfig.ruby_lsp.setup(
+    {
+      cmd = { 'ruby-lsp', },
+    })
 
     -- install other LSPs via mason
     require('mason-lspconfig').setup(
@@ -92,25 +96,6 @@ return
         handlers =
         {
           lsp_zero.default_setup,
-          -- tailwindcss = function()
-          --   require('lspconfig').tailwindcss.setup
-          --   {
-          --     settings =
-          --     { tailwindCSS =
-          --     {
-          --       experimental =
-          --       {
-          --         classRegex =
-          --         {
-          --           'class\\(([^)]*)\\)', "[\"'`]([^\"'`]*).*?[\"'`]",
-          --           'style\\(([^)]*)\\)', "[\"'`]([^\"'`]*).*?[\"'`]",
-          --         },
-          --       },
-
-          --     },
-          --     },
-          --   }
-          -- end,
           lua_ls = function()
             require('lspconfig').lua_ls.setup
             {
