@@ -69,10 +69,7 @@ return
     vim.keymap.set('n', '<M-o>', vim.cmd.ClangdSwitchSourceHeader)
 
     -- ruby-lsp setup, as Mason can't keep track of changing rbenv versions
-    lspconfig.ruby_lsp.setup(
-    {
-      cmd = { 'ruby-lsp', },
-    })
+    lspconfig.ruby_lsp.setup({ cmd = { 'ruby-lsp', }, })
 
     -- install other LSPs via mason
     require('mason-lspconfig').setup(
