@@ -12,6 +12,12 @@ return
     priority = 1000,
   },
   {
+    'uloco/bluloco.nvim',
+    lazy = false,
+    priority = 1000,
+    dependencies = { 'rktjmp/lush.nvim', },
+  },
+  {
     'f-person/auto-dark-mode.nvim',
     opts =
     {
@@ -21,7 +27,7 @@ return
       end,
       set_light_mode = function()
         vim.api.nvim_set_option_value('background', 'light', {})
-        vim.cmd.colorscheme('cyberdream-light')
+        vim.cmd.colorscheme('bluloco-light')
       end,
       update_interval = 3000,
       fallback = 'dark',
